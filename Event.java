@@ -1,19 +1,24 @@
 
 public class Event {
     
-    private int timestamp;
-    private Event next;
+    public int timestamp;
+    public Event next;
 
     public Event(int timestamp){
-        self.timestamp = timestamp;
-        self.next = Null;
+        this.timestamp = timestamp;
+        this.next = null;
     }
 
-    public Event getTimestamp(){
-        return self.timestamp;
+    public int getTimestamp(){
+        return this.timestamp;
     }
 
     public Event getNext(){
-        return self.next;
+        return this.next;
     }
+
+    public void setNext(Event e){
+        this.next = e;
+    }
+
 }

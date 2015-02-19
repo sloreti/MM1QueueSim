@@ -1,45 +1,61 @@
 
-import java.util.Math;
+import java.util.*;
 
 public class Controller {
     
-    private static final END_WORLD_TIME = 100000;
-    private static final LAMBDA = 1;
+    private static final int LAMBDA = 1;
 
-    private int currentTime;
-    private Event head;
-    private int scheduleLength;
+    private static int currentTime;
+    private static int endTime;
+    private static Event head;
+    private static int scheduleLength;
 
-    public void add(Event e){
 
-        while (crunchifyCurrent.getNext() != null) {
-            crunchifyCurrent = crunchifyCurrent.getNext();
-        }
-        // the last node's "next" reference set to our new node
-        crunchifyCurrent.setNext(crunchifyTemp);
-        listCount++;// increment the number of elements variable
+    public Controller(int endTime){
+        this.endTime = endTime;
+        this.currentTime = 0;
+        this.head = null;
+        this.scheduleLength =0;
+
+        initWorld();
     }
 
-    public void initWorld(){
-        self.currentTime = 0;
+    public static void add(Event e){
 
-        while(currentTime < END_WORLD_TIME){
+        Event currentEvent = head; 
+        while (currentEvent.getNext() != null) {
+            currentEvent = currentEvent.getNext();
+        }
+
+        currentEvent.setNext(e);
+        scheduleLength++;
+    }
+
+    public static void initWorld(){
+
+        while(currentTime < endTime){
+
+            int timestamp = getPoisson();
+            currentTime += timestamp;
 
             // Flip a coin
-            if (Math.random > .05){
-                Event temp = new BirthEvent()
+            if (Math.random() > .5){
+                BirthEvent temp = new BirthEvent(timestamp);
+                add(temp);
             } else {
-                Event temp = new DeathEvent()
-            }
-
-            add(temp);
+                DeathEvent temp = new DeathEvent(timestamp);
+                add(temp);
+            }  
 
         }
+
+        currentTime = 0;
     }
 
-    public static void main(String[] args) {
-        initWorld();
-        
+    public static int getPoisson(){
+        return 1;
     }
+
+
     
 }

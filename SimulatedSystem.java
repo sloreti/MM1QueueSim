@@ -1,5 +1,7 @@
 
-public abstract SimulatedSystem class {
+public abstract class SimulatedSystem  {
+
     
     
+
 }
