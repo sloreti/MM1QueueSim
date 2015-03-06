@@ -1,8 +1,12 @@
-
-public class DeathEvent extends Event {
-    
-    public DeathEvent(int timestamp){
-        super(timestamp);
-    }
-  
-}
+//
+//public class DeathEvent extends Event {
+//    
+//    public DeathEvent(double timestamp){
+//        super(timestamp);
+//    }
+//  
+//    public void myFunction() {
+//        
+//    }
+//  
+//}

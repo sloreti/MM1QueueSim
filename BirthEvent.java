@@ -1,8 +1,12 @@
-
-public class BirthEvent extends Event {
-    
-    public BirthEvent(int timestamp){
-        super(timestamp);
-    }
-    
-}
+//
+//public class BirthEvent extends Event {
+//    
+//    public BirthEvent(double timestamp){
+//        super(timestamp);
+//    }
+//
+//    public void myFunction() {
+//        
+//    }
+//    
+//}

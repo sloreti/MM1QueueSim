@@ -1,1 +1,6 @@
 *.class
+*.jpg
+*.java~
+*.docx
+.bash_profile
+hw3/
